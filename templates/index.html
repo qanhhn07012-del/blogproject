@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="custom-blog-container">
+    
+    <form method="GET" action="/" class="custom-search-form">
+        <input type="text" name="q" class="custom-search-input" placeholder="Tìm kiếm bài viết..." value="{{ search_query }}">
+        <button type="submit" class="custom-search-btn">Tìm</button>
+    </form>
+
+    {% for post in posts.items %}
+    <article class="custom-post-card">
+        
+        <header class="custom-post-header">
+            <h2 class="custom-post-title">
+                <a href="{{ url_for('read_post', post_id=post.id) }}">{{ post.title }}</a>
+            </h2>
+            <div class="custom-post-meta">
+                PUBLISHED {{ post.created_at.strftime('%d/%m/%Y') }} | 👁️ {{ post.views }} LƯỢT XEM
+            </div>
+        </header>
+
+        {% if post.image and post.image != 'default_cover.jpg' %}
+        <div class="custom-post-thumbnail">
+            <a href="{{ url_for('read_post', post_id=post.id) }}">
+                <img src="{{ url_for('static', filename='uploads/' + post.image) }}" alt="{{ post.title }}">
+            </a>
+        </div>
+        {% endif %}
+        
+        <div class="custom-post-excerpt">
+            <p>{{ post.content[:250] }}...</p>
+        </div>
+        
+        <footer class="custom-post-footer">
+            <a href="{{ url_for('read_post', post_id=post.id) }}" class="custom-read-more-btn">READ MORE</a>
+            
+            <form action="{{ url_for('like_post', post_id=post.id) }}" method="POST" class="custom-like-form">
+                <button type="submit" class="custom-like-btn">
+                    ❤️ <span class="like-count">{{ post.likes.count() }}</span>
+                </button>
+            </form>
+        </footer>
+        
+    </article>
+    <hr class="custom-post-divider">
+    {% else %}
+        <p class="text-center text-muted my-5">Chưa có bài viết nào.</p>
+    {% endfor %}
+
+    <div class="custom-pagination">
+        {% if posts.has_prev %}
+            <a href="{{ url_for('index', page=posts.prev_num, q=search_query) }}" class="page-link-btn">← Bài mới hơn</a>
+        {% else %}
+            <div></div> 
+        {% endif %}
+
+        {% if posts.has_next %}
+            <a href="{{ url_for('index', page=posts.next_num, q=search_query) }}" class="page-link-btn">Bài cũ hơn →</a>
+        {% endif %}
+    </div>
+
+</div>
+{% endblock %}

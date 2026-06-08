@@ -1,0 +1,251 @@
+/* ==================== TỔNG THỂ & PHÔNG CHỮ ==================== */
+.custom-blog-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 15px;
+    font-family: , "Times New Roman", serif;
+    background-color: #ffffff;
+}
+
+/* Khối gom nhóm nút bấm bên phải */
+.custom-navbar-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* Khoảng cách an toàn giữa 2 nút */
+    margin-left: auto !important;
+    /* Ép buộc khối này luôn nằm bên phải */
+}
+
+/* Thiết kế lại nút bấm theo Style thơ/blog tối giản (Bỏ màu đỏ chói) */
+.custom-nav-btn {
+    text-decoration: none !important;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 8px 18px;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+}
+
+/* Nút Dashboard (Nền trắng, viền mảnh lịch sự) */
+.btn-dashboard {
+    background-color: transparent !important;
+    color: #555555 !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+.btn-dashboard:hover {
+    background-color: #fafafa !important;
+    color: #111111 !important;
+    border-color: #111111 !important;
+}
+
+/* Nút Đăng xuất (Thay màu đỏ chói bằng tone đen huyền bí chuẩn phong cách nút READ MORE) */
+.btn-logout {
+    background-color: #111111 !important;
+    color: #ffffff !important;
+    border: 1px solid #111111 !important;
+}
+
+.btn-logout:hover {
+    background-color: #dc3545 !important;
+    /* Chỉ khi di chuột vào mới chuyển đỏ để cảnh báo */
+    border-color: #dc3545 !important;
+}
+
+/* ==================== 1. THANH TÌM KIẾM LIỀN KHỐI ==================== */
+.custom-search-form {
+    display: flex;
+    max-width: 500px;
+    margin: 20px auto 70px auto;
+}
+
+.custom-search-input {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-right: none;
+    /* Bỏ viền phải để dính liền với nút Tìm */
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    height: 42px;
+    box-sizing: border-box;
+}
+
+.custom-search-btn {
+    background-color: #111;
+    color: #fff;
+    border: 1px solid #111;
+    padding: 0 25px;
+    font-size: 14px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    height: 42px;
+    box-sizing: border-box;
+    transition: background 0.2s;
+}
+
+.custom-search-btn:hover {
+    background-color: #444;
+}
+
+/* ==================== 2. KHỐI BÀI VIẾT BIỂU DIỄN DỌC ==================== */
+.custom-post-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Đảm bảo mọi thành phần luôn ở chính giữa trục dọc */
+    margin-bottom: 60px;
+}
+
+/* Tiêu đề bài viết */
+.custom-post-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.custom-post-title {
+    margin: 0 0 12px 0;
+}
+
+.custom-post-title a {
+    font-size: 30px;
+    font-weight: 700;
+    color: #111;
+    text-decoration: none;
+    line-height: 1.4;
+    letter-spacing: -0.5px;
+}
+
+/* Thông tin ngày tháng / lượt xem */
+.custom-post-meta {
+    font-size: 11px;
+    color: #888;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Khối ảnh bọc ngoài */
+.custom-post-thumbnail {
+    width: 100%;
+    max-width: 700px;
+    /* Định kích thước cố định bằng văn bản bên dưới */
+    margin-bottom: 25px;
+}
+
+.custom-post-thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+    /* Bo góc mịn màng cho ảnh game */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    /* Đổ bóng cực nhẹ tạo chiều sâu */
+}
+
+/* Đoạn trích nội dung */
+.custom-post-excerpt {
+    max-width: 650px;
+    color: #444;
+    line-height: 1.8;
+    font-size: 15.5px;
+    text-align: center;
+    /* Giữ kiểu căn giữa thơ mộng của bạn */
+    margin-bottom: 25px;
+}
+
+/* ==================== 3. THANH TƯƠNG TÁC (FOOTER BÀI VIẾT) ==================== */
+.custom-post-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Đưa tất cả nút bấm về chính giữa */
+    gap: 15px;
+    /* Khoảng cách sát và đẹp giữa nút Read more và Tim */
+    width: 100%;
+}
+
+/* Nút READ MORE chuẩn mẫu */
+.custom-read-more-btn {
+    background-color: #111;
+    color: #ffffff !important;
+    text-decoration: none;
+    padding: 10px 24px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+
+.custom-read-more-btn:hover {
+    background-color: #444;
+}
+
+/* Nút Like tối giản bằng biểu tượng */
+.custom-like-form {
+    display: inline-block;
+    margin: 0;
+}
+
+.custom-like-btn {
+    background: none !important;
+    border: none !important;
+    color: #dc3545;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    outline: none;
+}
+
+.custom-like-btn:hover {
+    transform: scale(1.15);
+    transition: transform 0.2s ease;
+}
+
+.like-count {
+    color: #555;
+    font-size: 14px;
+    margin-left: 4px;
+    font-family: sans-serif;
+    /* Đổi font số lượng like về sans-serif nhìn cho gọn */
+}
+
+/* Đường kẻ phân cách */
+.custom-post-divider {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 40px auto;
+    width: 100%;
+    max-width: 650px;
+}
+
+/* ==================== 4. PHÂN TRANG TỐI GIẢ ==================== */
+.custom-pagination {
+    display: flex;
+    justify-content: space-between;
+    max-width: 650px;
+    margin: 40px auto 0 auto;
+}
+
+.page-link-btn {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.page-link-btn:hover {
+    background-color: #111;
+    color: #fff;
+    border-color: #111;
+}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Viết Bài Mới</h2>
+
+    <form action="{{ url_for('create_post') }}" method="POST" enctype="multipart/form-data">
+        
+        <div class="form-group mb-4">
+            <label for="title" class="font-weight-bold">Tiêu đề bài viết</label>
+            <input type="text" name="title" id="title" class="form-control" placeholder="Nhập tiêu đề..." required>
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="image" class="font-weight-bold">Ảnh bìa bài viết</label>
+            <input type="file" name="image" id="image" class="form-control-file" accept="image/*">
+            <small class="text-muted d-block mt-1">Chấp nhận định dạng: png, jpg, jpeg, gif. Để trống sẽ dùng ảnh mặc định.</small>
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="content" class="font-weight-bold">Nội dung</label>
+            <textarea name="content" id="content" class="form-control" rows="10" placeholder="Nội dung bài viết của bạn..." required></textarea>
+        </div>
+
+        <div class="d-flex justify-content-between mt-4">
+            <a href="{{ url_for('dashboard') }}" class="btn btn-outline-secondary">Hủy bỏ</a>
+            <button type="submit" class="btn btn-dark px-4">Xuất bản</button>
+        </div>
+        
+    </form>
+</div>
+{% endblock %}
